@@ -1,4 +1,4 @@
-<div class="panel panel-default" >
+<div class="panel panel-default">
   <div class="panel-heading">{{ element.name }}</div>
   <div class="panel-body">
     <p>
@@ -7,6 +7,6 @@
       }}</strong>
       <em *ngIf="element.type === 'blueprint'" style="color: blue">{{ element.content }}</em>
     </p>
-    <app-checkbox></app-checkbox>
   </div>
+  <app-checkbox (checkBoxSelected)="onCheckBoxSelected($event)"></app-checkbox>
 </div>

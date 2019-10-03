@@ -1,19 +1,23 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-server-element',
-  templateUrl: './server-element.component.html',
-  styleUrls: ['./server-element.component.css']
+  selector: "app-server-element",
+  templateUrl: "./server-element.component.html",
+  styleUrls: ["./server-element.component.css"]
 })
 export class ServerElementComponent implements OnInit {
-  @Input('srvElement') element: {
-    type: string,
-    name: string,
-    content: string,
-  }
-  constructor() { }
+  @Input("srvElement") element: {
+    type: string;
+    isSelected: boolean;
+    name: string;
+    content: string;
+  };
 
-  ngOnInit() {
+  onCheckBoxSelected(selected: boolean) {
+    this.element.isSelected = selected;
   }
 
+  constructor() {}
+
+  ngOnInit() {}
 }
