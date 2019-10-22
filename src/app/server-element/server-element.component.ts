@@ -14,7 +14,8 @@ export class ServerElementComponent implements OnInit {
   };
 
   onCheckBoxSelected(selected: boolean) {
-    this.element.isSelected = true;
+    this.element.isSelected = !this.element.isSelected;
+    console.log('value changed', this.element.isSelected);
   }
 
   constructor() {}
