@@ -11,20 +11,33 @@ export class CockpitComponent implements OnInit {
   newServerContent = "";
 
   @Output() serverCreated = new EventEmitter<Server>();
+  @Output() blueprintAdded = new EventEmitter<{serverName: string; serverContent: string; type: string; isSelected: boolean}>()
   // Output to dekorator ktory jako arg przyjmuje to co jest po prawej stronie. Angular bedzie mogl powiazac ten element z wyslaniem zdarzen do rodzica.
 
   onAddServer() {
     this.serverCreated.emit({
-      type: "server",
+      type: 'server',
+      isSelected: false,
       name: this.newServerName,
       content: this.newServerContent
     });
 
-    this.newServerName = "";
-    this.newServerContent = "";
+    this.newServerName = '';
+    this.newServerContent = '';
   }
 
   onAddBlueprint() {
+    this.blueprintAdded.emit( {
+      type: 'blueprint',
+        isSelected: false,
+        serverName: this.newServerName,
+        serverContent: this.newServerContent
+    });
+    this.newServerName = '';
+    this.newServerContent = '';
+  }
+
+  // onAddBlueprint() {
     // this.serverElements.push({
     //   type: 'blueprint',
     //   name: this.newServerName,
@@ -32,7 +45,7 @@ export class CockpitComponent implements OnInit {
     // })
     // this.newServerName ='';
     // this.newServerContent ='';
-  }
+
   constructor() {}
 
   ngOnInit() {}

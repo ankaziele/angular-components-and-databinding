@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./server-element.component.css"]
 })
 export class ServerElementComponent implements OnInit {
-  @Input("srvElement") element: {
+  @Input('srvElement') element: {
     type: string;
     isSelected: boolean;
     name: string;
@@ -14,7 +14,7 @@ export class ServerElementComponent implements OnInit {
   };
 
   onCheckBoxSelected(selected: boolean) {
-    this.element.isSelected = selected;
+    this.element.isSelected = true;
   }
 
   constructor() {}
