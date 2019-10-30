@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { CockpitComponent } from './cockpit.component';
+import { FormsModule } from '@angular/forms';
 
 describe('CockpitComponent', () => {
   let component: CockpitComponent;
@@ -11,7 +12,10 @@ describe('CockpitComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CockpitComponent ]
+      declarations: [ CockpitComponent ],
+      imports: [
+        FormsModule
+     ],
     })
     .compileComponents();
   }));

@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { CheckboxComponent } from './checkbox.component';
+import { FormsModule } from '@angular/forms';
 
 describe('CheckboxComponent', () => {
   let component: CheckboxComponent;
@@ -11,7 +12,10 @@ describe('CheckboxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CheckboxComponent ]
+      declarations: [ CheckboxComponent ],
+      imports: [
+        FormsModule
+     ],
     })
     .compileComponents();
   }));
