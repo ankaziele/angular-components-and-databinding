@@ -1,0 +1,8 @@
+<div *ngIf="!isEditable">
+    <span>{{text}}</span>
+    <button (click)="onEditClick()">Edit</button>
+</div>
+<div *ngIf="isEditable">
+    <input type="text" [(ngModel)]="text"/>
+    <button (click)="onEditClick()">Save</button>
+</div>

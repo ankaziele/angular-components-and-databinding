@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
-import { TitleComponent } from './title/title.component';
+import { EditorComponent } from './editor/editor.component';
 
 @NgModule({
    declarations: [
@@ -15,7 +15,7 @@ import { TitleComponent } from './title/title.component';
       CockpitComponent,
       ServerElementComponent,
       CheckboxComponent,
-      TitleComponent
+      EditorComponent
    ],
    imports: [
       BrowserModule,
