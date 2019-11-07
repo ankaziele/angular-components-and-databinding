@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditorComponent } from './editor.component';
+import { FormsModule } from '@angular/forms';
 
 describe('EditorComponent', () => {
   let component: EditorComponent;
@@ -8,7 +9,10 @@ describe('EditorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditorComponent ]
+      declarations: [ EditorComponent ],
+      imports: [
+        FormsModule
+     ],
     })
     .compileComponents();
   }));
@@ -22,4 +26,24 @@ describe('EditorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe ('onCancelClick', ()=>{
+    it('should change flag of isEditable', () => {
+      //given - to samo mazna by uzyskac jako ustawienie :
+      //component.isEditable = true
+      component.onEditClick()
+
+
+      //when
+      component.onCancelClick()
+
+
+      //then
+      expect(component.isEditable).toBe(false);
+    });
+  })
+
+
+
+
 });

@@ -4,6 +4,7 @@ import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { FormsModule } from '@angular/forms';
+import { EditorComponent } from './editor/editor.component';
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -13,6 +14,7 @@ describe('AppComponent', () => {
         CockpitComponent,
         ServerElementComponent,
         CheckboxComponent,
+        EditorComponent,
      ],
      imports: [
       FormsModule

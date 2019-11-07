@@ -6,13 +6,14 @@ import { DebugElement } from '@angular/core';
 import { ServerElementComponent } from './server-element.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { FormsModule } from '@angular/forms';
+import { EditorComponent } from '../editor/editor.component';
 
 describe('ServerElementComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ServerElementComponent,
-      CheckboxComponent ],
+      CheckboxComponent, EditorComponent ],
       imports: [
         FormsModule
      ],
