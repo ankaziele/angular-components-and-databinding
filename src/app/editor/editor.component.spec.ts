@@ -43,7 +43,55 @@ describe('EditorComponent', () => {
     });
   })
 
+  describe ('onEditClick', ()=>{
+    it('should change flag of isEditable', () => {
+      //given
+      component.isEditable = false;
 
+      //when
+      component.onEditClick()
 
+      //then
+      expect(component.isEditable).toBe(true);
+    });
 
+    it('should change newText to text', () => {
+      //given
+      component.isEditable = false;
+      component.text = 'some text'
+      
+      //when
+      component.onEditClick()
+      
+      //then
+      expect(component.newText).toBe('some text');
+    });
+
+  })
+
+  describe ('onSaveClick', ()=>{
+    it('should change flag of isEditable', () => {
+      //given
+      component.isEditable = true;
+
+      //when
+      component.onSaveClick()
+
+      //then
+      expect(component.isEditable).toBe(false);
+    });
+
+    it('should change text to newText', () => {
+      //given
+      component.isEditable = true;
+      component.newText = 'some text to save'
+      
+      //when
+      component.onSaveClick()
+      
+      //then
+      expect(component.text).toBe('some text to save');
+    });
+
+  })
 });
